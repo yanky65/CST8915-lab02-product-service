@@ -7,7 +7,7 @@ name: Build and deploy Python app to Azure Web App - dy-lab3-product-service
 on:
   push:
     branches:
-      - 'main'
+      - midterm-project
   workflow_dispatch:
 
 jobs:
