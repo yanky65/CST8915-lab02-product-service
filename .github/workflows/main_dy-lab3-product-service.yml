@@ -63,14 +63,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D502AB5E645F498CB616A6361A021C34 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_42DC6521346643578F72C599C1E7E67C }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_5CD78993E9734CDDA97F7469EBE122AE }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'dy-lab3-product-service'
+          app-name: 'product-service-mp'
           slot-name: 'Production'
           package: product-service.zip
